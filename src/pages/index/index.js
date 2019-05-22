@@ -1,5 +1,6 @@
 //index.js
 import util from '../../utils/util'
+import regeneratorRuntime from '../../utils/regenerator-runtime'
 
 //获取应用实例
 const app = getApp()
@@ -18,7 +19,6 @@ Page({
     })
   },
   onLoad() {
-    console.log(util)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

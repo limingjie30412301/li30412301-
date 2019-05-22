@@ -1,5 +1,43 @@
+@import './color'
+
+
+// float
+clearFloat()
+  zoom 1
+  &:after
+    content ""
+    display block
+    height 0
+    clear both
+    visibility hidden
+
+
+// text
 ellipsis()
   overflow: hidden
   white-space: nowrap
   text-overflow: ellipsis
-$red = red
+
+
+// position
+absolute(left=0, top=0)
+  position absolute
+  left unit(left, px)
+  top unit(top, px)
+
+relative(left=0, top=0)
+  position relative
+  left unit(left, px)
+  top unit(top, px)
+
+fixed(left=0, top=0)
+  position fixed
+  left unit(left, px)
+  top unit(top, px)
+
+
+// flex
+flexCenter()
+  display flex
+  justify-content center
+  align-items center 

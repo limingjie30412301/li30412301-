@@ -1,4 +1,6 @@
 //index.js
+import util from '../../utils/util'
+
 //获取应用实例
 const app = getApp()
 
@@ -16,6 +18,7 @@ Page({
     })
   },
   onLoad() {
+    console.log(util)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

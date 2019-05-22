@@ -1,7 +1,7 @@
 //app.js
 import fetch from './api/fetch'
 
-wx.fetch = fetch
+wx.fetch = fetch()
 
 App({
   onLaunch() {

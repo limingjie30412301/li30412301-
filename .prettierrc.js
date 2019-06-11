@@ -1,4 +1,5 @@
 module.exports = {
+	printWidth: 120, //设置prettier单行输出（不折行）的（最大）长度
 	trailingComma: 'es5', //在任何可能的多行中输入尾逗号
 	useTabs: true, //使用tab（制表位）缩进而非空格
 	tabWidth: 2, //设置工具每一个水平缩进的空格数

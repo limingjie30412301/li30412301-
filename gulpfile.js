@@ -1,5 +1,6 @@
 const gulp = require('gulp') //gulp
 const eslint = require('gulp-eslint') //eslint
+const prettier = require('gulp-prettier') //prettier
 const del = require('del') //删除文件
 const rename = require('gulp-rename') //更改文件名
 const stylus = require('gulp-stylus') //.styl文件编译
@@ -21,6 +22,14 @@ const sources = {
 // 每次编译前清除dist文件
 gulp.task('clean', () => {
   return del(['./dist/**'])
+})
+
+// prettier格式化代码
+gulp.task('prettier', () => {
+  return gulp
+    .src(sources.script)
+    .pipe(prettier())
+    .pipe(gulp.dest('./src'))
 })
 
 // 直接复制js文件
@@ -86,6 +95,6 @@ gulp.task('watch', () => {
 //编译任务流（gulp.parallerl并行执行任务，gulp.series顺序执行任务）
 gulp.task('default', gulp.parallel('script', 'pug', 'stylus', 'json', 'imageMin', 'wxscript'))
 //build
-gulp.task('build', gulp.series('clean', 'default'))
+gulp.task('build', gulp.series('clean', 'prettier', 'default'))
 //dev
 gulp.task('dev', gulp.series('build', 'watch'))

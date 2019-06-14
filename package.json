@@ -20,6 +20,7 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-eslint": "^5.0.0",
     "gulp-imagemin": "^5.0.3",
+    "gulp-prettier": "^2.1.0",
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
